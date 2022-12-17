@@ -16,6 +16,7 @@ namespace ODataQueryOptions_WebAPI.Controllers
         public WeatherForecastController(ILogger<WeatherForecastController> logger)
         {
             _logger = logger;
+            
         }
 
         [HttpGet]
