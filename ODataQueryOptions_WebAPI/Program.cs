@@ -7,11 +7,11 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddScoped<IStaticDataRepository, StaticDataRepository>();
 
-//builder.Services.AddControllers().AddOData(opt=> 
-//                    opt.EnableQueryFeatures().
-//                    AddRouteComponents("odata",ODataModelBuilder.GetEdmModel(),
-//                    services =>
-//                    services.AddSingleton<ISearchBinder, StaticDataRepository>()));
+builder.Services.AddControllers().AddOData(opt =>
+                    opt.EnableQueryFeatures().
+                    AddRouteComponents("odata", ODataModelBuilder.GetEdmModel(),
+                    services =>
+                    services.AddSingleton<ISearchBinder, StaticDataRepository>()));
 
 var app = builder.Build();
 
